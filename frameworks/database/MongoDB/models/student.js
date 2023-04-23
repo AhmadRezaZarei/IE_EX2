@@ -20,6 +20,21 @@ const StudentSchema = new Schema({
     },
     phone: {
         type: String
+    },
+    grade: {
+        type: String
+    },
+    entranceYear: {
+        type: Number
+    },
+    mean: {
+        type: Number
+    },
+    faculty: {
+        type: String
+    },
+    fieldOfStudy: {
+        type: String
     }
 });
 

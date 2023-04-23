@@ -1,8 +1,7 @@
+import professorRouter from "./professor";
 
-export default function (express) {
+export default function routes(app ,express) {
 
-    const router = express.Router()
-
-
+    app.use("/admin", professorRouter(express))
 
 }

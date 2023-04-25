@@ -35,7 +35,4 @@ const update = function ({
     return studentRepository.add(newStudent);
 }
 
-
 export default update
-
-//module.exports.addProfessor = addProfessor;

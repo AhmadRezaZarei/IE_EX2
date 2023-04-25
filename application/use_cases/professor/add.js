@@ -16,12 +16,7 @@ const addProfessor = function ({
     // TODO: add a proper validation (consider using @hapi/joi)
 
     const newPost = professor({firstName, lastName, idNumber, password, email, phone, faculty, fieldOfStudy, rank});
-
-
-
-
-    console.log(professorRepository)
-
+    
     return professorRepository.add(newPost);
 }
 

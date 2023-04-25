@@ -16,7 +16,7 @@ const professorRouter = function(express) {
 
     router.delete("student/:id", controller.deleteProfessor)
 
-    router.put("student/", controller.updateProfessor)
+    router.put("student/:id", controller.updateProfessor)
 
     return router;
 

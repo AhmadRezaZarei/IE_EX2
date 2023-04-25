@@ -79,7 +79,9 @@ const studentController = function (
 
     const updateStudent = (req, res, next) => {
 
-        const {idNumber, firstName, lastName, email, password, rank, phone, faculty, fieldOfStudy} = req.body
+        const idNumber = req.params.id
+
+        const {firstName, lastName, email, password, rank, phone, faculty, fieldOfStudy} = req.body
 
         update(
             {firstName, lastName, idNumber, password, email, phone, faculty, fieldOfStudy, rank, studentRepository}

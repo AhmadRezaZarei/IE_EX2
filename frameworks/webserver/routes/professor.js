@@ -10,6 +10,7 @@ const professorRouter = function(express) {
 
     router.post("/professor", controller.addNewProfessor)
 
+    router.get("/professor/:id", controller.fetchProfessorById)
 
     return router;
 

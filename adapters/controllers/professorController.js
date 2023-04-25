@@ -1,6 +1,8 @@
 import addProfessor from "../../application/use_cases/professor/add.js";
 import professor from "../../entities/professor.js"
-const professorController = function(
+import findById from "../../application/use_cases/professor/findById.js";
+
+const professorController = function (
     professorDbRepository,
     professorDbRepositoryImpl
 ) {
@@ -33,6 +35,14 @@ const professorController = function(
     }
 
     const fetchProfessorById = (req, res, next) => {
+
+        const idNumber = req.params.id
+
+        findById({idNumber, professorRepository}).then(prof => {
+            res.json({professor: prof})
+        }).catch(err => {
+            res.status(500).json(internalServerError)
+        })
 
     }
 

@@ -1,6 +1,7 @@
 import addProfessor from "../../application/use_cases/professor/add.js";
 import professor from "../../entities/professor.js"
 import findById from "../../application/use_cases/professor/findById.js";
+import findAll from "../../application/use_cases/professor/findAll.js";
 
 const professorController = function (
     professorDbRepository,
@@ -12,6 +13,12 @@ const professorController = function (
     const professorRepository = professorDbRepository(professorDbRepositoryImpl())
 
     const fetchAllProfessors = (req, res, next) => {
+
+        findAll({professorRepository}).then(profs => {
+            res.json({professors: profs})
+        }).catch(err => {
+            res.status(500).json(internalServerError)
+        })
 
     }
 

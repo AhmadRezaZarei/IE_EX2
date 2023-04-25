@@ -12,6 +12,9 @@ const professorRouter = function(express) {
 
     router.get("/professor/:id", controller.fetchProfessorById)
 
+    router.get("/professors", controller.fetchAllProfessors)
+
+
     return router;
 
 }

@@ -2,6 +2,8 @@ import addProfessor from "../../application/use_cases/professor/add.js";
 import professor from "../../entities/professor.js"
 import findById from "../../application/use_cases/professor/findById.js";
 import findAll from "../../application/use_cases/professor/findAll.js";
+import deleteById from "../../application/use_cases/professor/deleteById.js";
+import update from "../../application/use_cases/professor/update.js";
 
 const professorController = function (
     professorDbRepository,
@@ -39,6 +41,16 @@ const professorController = function (
 
     const deleteProfessor = (req, res, next) => {
 
+        const idNumber = req.params.id
+
+        deleteById({idNumber, professorRepository})
+            .then(prof => {
+                res.json({professor: prof})
+            }).catch(err => {
+            res.status(500).json(internalServerError)
+        })
+
+
     }
 
     const fetchProfessorById = (req, res, next) => {
@@ -54,6 +66,18 @@ const professorController = function (
     }
 
     const updateProfessor = (req, res, next) => {
+
+
+        const {idNumber ,firstName, lastName, email, password, rank, phone, faculty, fieldOfStudy} = req.body
+
+        update(
+            {firstName, lastName, idNumber, password, email, phone, faculty, fieldOfStudy, rank, professorRepository}
+        ).then(prof => {
+            res.json({professor: prof})
+        }).catch(err => {
+            res.status(500).json(internalServerError)
+        })
+
 
     }
 

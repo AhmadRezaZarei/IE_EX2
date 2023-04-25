@@ -14,6 +14,9 @@ const professorRouter = function(express) {
 
     router.get("/professors", controller.fetchAllProfessors)
 
+    router.delete("/professor/:id", controller.deleteProfessor)
+
+    router.put("/professor", controller.updateProfessor)
 
     return router;
 

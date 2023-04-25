@@ -1,9 +1,8 @@
-import {professorController} from "../../../adapters/controllers/professorController";
-import professorDbRepository from "../../../application/repositories/professorRepository";
-import professorRepositoryMongoDB from "../../database/MongoDB/repositories/professorRepositoryMongoDB";
+import professorController from "../../../adapters/controllers/professorController.js";
+import professorDbRepository from "../../../application/repositories/professorRepository.js";
+import professorRepositoryMongoDB from "../../database/MongoDB/repositories/professorRepositoryMongoDB.js";
 
-
-export default function professorRouter(express) {
+const professorRouter = function(express) {
 
     const router = express.Router()
 
@@ -12,4 +11,7 @@ export default function professorRouter(express) {
     router.post("/professor", controller.addNewProfessor)
 
 
+    return router;
+
 }
+export default  professorRouter;

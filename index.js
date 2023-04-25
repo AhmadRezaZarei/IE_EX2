@@ -1,8 +1,6 @@
-
-import routes from "./frameworks/webserver/routes/index"
-
-const express = require("express")
-const mongoose = require("mongoose")
+import routes from "./frameworks/webserver/routes/index.js";
+import express from "express"
+import mongoose from "mongoose";
 
 const app = express()
 

@@ -23,6 +23,5 @@ const ITManagerSchema = new Schema({
     }
 });
 
-const ITManagerModel = mongoose.model('ITManager', ITManagerSchema);
+module.exports.ITManagerModel = mongoose.model('ITManager', ITManagerSchema);
 
-export default ITManagerModel;

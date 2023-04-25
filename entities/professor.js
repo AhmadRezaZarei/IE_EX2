@@ -1,14 +1,14 @@
-export default function professor({
-                                      firstName,
-                                      lastName,
-                                      idNumber,
-                                      password,
-                                      email,
-                                      phone,
-                                      faculty,
-                                      fieldOfStudy,
-                                      rank
-                                  }) {
+const professor = function ({
+                                firstName,
+                                lastName,
+                                idNumber,
+                                password,
+                                email,
+                                phone,
+                                faculty,
+                                fieldOfStudy,
+                                rank
+                            }) {
     return {
         getFirstName: () => firstName,
         getLastName: () => lastName,
@@ -21,3 +21,7 @@ export default function professor({
         getRank: () => rank
     };
 }
+
+export default professor
+
+//module.exports.professor = professor;

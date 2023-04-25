@@ -35,3 +35,4 @@ const ProfessorSchema = new Schema({
 const ProfessorModel = mongoose.model('Professor', ProfessorSchema);
 
 export default ProfessorModel;
+

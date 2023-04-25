@@ -1,16 +1,13 @@
-import * as https from "https";
-import addProfessor from "../../application/use_cases/professor/add";
-
-
-export function professorController(
+import addProfessor from "../../application/use_cases/professor/add.js";
+import professor from "../../entities/professor.js"
+const professorController = function(
     professorDbRepository,
     professorDbRepositoryImpl
 ) {
 
     const internalServerError = {error: "Unknown error", errorCode: 500}
 
-    const dbRepository = professorDbRepository(professorDbRepositoryImpl())
-
+    const professorRepository = professorDbRepository(professorDbRepositoryImpl())
 
     const fetchAllProfessors = (req, res, next) => {
 
@@ -22,7 +19,7 @@ export function professorController(
         const {firstName, lastName, email, password, rank, phone, faculty, fieldOfStudy} = req.body
 
         addProfessor(
-            {firstName, lastName, idNumber, password, email, phone, faculty, fieldOfStudy, rank, dbRepository}
+            {firstName, lastName, idNumber, password, email, phone, faculty, fieldOfStudy, rank, professorRepository}
         ).then(prof => {
             res.json({professor: prof})
         }).catch(err => {
@@ -54,3 +51,6 @@ export function professorController(
 
 
 }
+
+
+export default professorController;

@@ -1,4 +1,4 @@
-export default function professorDbRepository(repository) {
+const professorDbRepository = function (repository) {
     const findAll = () => repository.findAll();
     const findById = (id) => repository.findById(id);
     const add = (profEntity) => repository.add(profEntity);
@@ -13,3 +13,6 @@ export default function professorDbRepository(repository) {
         deleteById
     };
 }
+
+
+export default professorDbRepository;

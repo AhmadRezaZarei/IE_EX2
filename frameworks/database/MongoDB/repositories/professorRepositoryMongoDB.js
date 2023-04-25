@@ -1,7 +1,7 @@
-import ProfessorModel from "../models/professor";
+import ProfessorModel from "../models/professor.js";
 
 
-export default function professorRepositoryMongoDB() {
+const professorRepositoryMongoDB = function () {
 
     const findAll = () => ProfessorModel.find({})
 
@@ -55,3 +55,5 @@ export default function professorRepositoryMongoDB() {
     }
 
 }
+
+export default professorRepositoryMongoDB;

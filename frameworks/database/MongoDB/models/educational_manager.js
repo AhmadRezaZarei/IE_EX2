@@ -28,4 +28,5 @@ const EducationalManagerSchema = new Schema({
 
 const EducationalManagerModel = mongoose.model('EducationalManager', EducationalManagerSchema);
 
-export default EducationalManagerModel;
+module.exports.EducationalManagerModel = EducationalManagerModel;
+

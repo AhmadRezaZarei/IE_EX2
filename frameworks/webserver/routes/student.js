@@ -10,9 +10,9 @@ const studentRouter = function (express) {
 
     router.post("/student", controller.addNewStudent)
 
-    router.get("/student/:id", controller.fetchStudentById())
+    router.get("/student/:id", controller.fetchStudentById)
 
-    router.get("/students", controller.fetchAllStudents())
+    router.get("/students", controller.fetchAllStudents)
 
     router.delete("/student/:id", controller.deleteStudent)
 

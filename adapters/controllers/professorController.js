@@ -69,7 +69,7 @@ const professorController = function (
 
 
         const idNumber = req.params.id
-        
+
         const {firstName, lastName, email, password, rank, phone, faculty, fieldOfStudy} = req.body
 
         update(

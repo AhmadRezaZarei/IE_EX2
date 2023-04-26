@@ -32,7 +32,7 @@ const update = function ({
         }
     );
 
-    return studentRepository.add(newStudent);
+    return studentRepository.updateById(idNumber, newStudent);
 }
 
 export default update

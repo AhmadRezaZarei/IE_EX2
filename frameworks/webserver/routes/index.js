@@ -1,5 +1,5 @@
 import professorRouter from "./professor.js";
-import studentRouter from "./student";
+import studentRouter from "./student.js";
 
 const routes = function routes(app, express) {
     app.use(express.json())

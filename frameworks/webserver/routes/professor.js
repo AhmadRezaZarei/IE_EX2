@@ -8,15 +8,15 @@ const professorRouter = function(express) {
 
     const controller = professorController(professorDbRepository, professorRepositoryMongoDB)
 
-    router.post("student/", controller.addNewProfessor)
+    router.post("/professor/", controller.addNewProfessor)
 
-    router.get("student/:id", controller.fetchProfessorById)
+    router.get("/professor/:id", controller.fetchProfessorById)
 
-    router.get("students/", controller.fetchAllProfessors)
+    router.get("/professors/", controller.fetchAllProfessors)
 
-    router.delete("student/:id", controller.deleteProfessor)
+    router.delete("/professor/:id", controller.deleteProfessor)
 
-    router.put("student/:id", controller.updateProfessor)
+    router.put("/professor/:id", controller.updateProfessor)
 
     return router;
 

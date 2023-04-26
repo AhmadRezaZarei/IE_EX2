@@ -2,7 +2,7 @@ import itManagerController from "../../../adapters/controllers/itManagerControll
 import itManagerRepository from "../../../application/repositories/itManagerRepository.js";
 import itManagerRepositoryMongoDB from "../../database/MongoDB/repositories/itManagerRepositoryMongoDB.js";
 
-const professorRouter = function (express) {
+const managerRouter = function (express) {
 
     const router = express.Router()
 
@@ -21,4 +21,4 @@ const professorRouter = function (express) {
     return router;
 
 }
-export default professorRouter;
+export default managerRouter;

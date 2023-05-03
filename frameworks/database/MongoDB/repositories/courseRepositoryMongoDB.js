@@ -1,7 +1,7 @@
 import CourseModel from "../models/course.js";
 
 
-const studentRepositoryMongoDB = function () {
+const courseRepositoryMongoDB = function () {
 
     const findAll = () => CourseModel.find({})
 
@@ -49,4 +49,4 @@ const studentRepositoryMongoDB = function () {
 
 }
 
-export default studentRepositoryMongoDB;
+export default courseRepositoryMongoDB;

@@ -1,4 +1,4 @@
-const itManager = function ({
+const manager = function ({
                               firstName,
                               lastName,
                               idNumber,
@@ -15,7 +15,5 @@ const itManager = function ({
         getPhone: () => phone
     };
 }
-
-export default itManager
-
+export default manager
 //module.exports.professor = professor;

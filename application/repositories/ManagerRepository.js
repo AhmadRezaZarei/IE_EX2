@@ -1,4 +1,4 @@
-const itManagerDbRepository = function (repository) {
+const managerDbRepository = function (repository) {
     const findAll = () => repository.findAll();
     const findById = (id) => repository.findById(id);
     const add = (profEntity) => repository.add(profEntity);
@@ -15,4 +15,4 @@ const itManagerDbRepository = function (repository) {
 }
 
 
-export default itManagerDbRepository;
+export default managerDbRepository;

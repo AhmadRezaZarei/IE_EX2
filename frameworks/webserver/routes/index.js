@@ -10,6 +10,7 @@ const routes = function routes(app, express) {
     app.use("/admin/", studentRouter(express))
     app.use("/admin/", managerRouter(express))
 
+
 }
 
 export default routes;

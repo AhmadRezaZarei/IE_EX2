@@ -1,8 +1,8 @@
-import addItManager from "../../application/use_cases/it_manager/add.js";
-import findById from "../../application/use_cases/it_manager/findById.js";
-import findAll from "../../application/use_cases/it_manager/findAll.js";
-import deleteById from "../../application/use_cases/it_manager/deleteById.js";
-import update from "../../application/use_cases/it_manager/update.js";
+import addManager from "../../application/use_cases/manager/add.js";
+import findById from "../../application/use_cases/manager/findById.js";
+import findAll from "../../application/use_cases/manager/findAll.js";
+import deleteById from "../../application/use_cases/manager/deleteById.js";
+import update from "../../application/use_cases/manager/update.js";
 
 const professorController = function (
     itManagerDbRepository,
@@ -28,7 +28,7 @@ const professorController = function (
         const idNumber = Date.now()
         const {firstName, lastName, email, password, phone} = req.body
 
-        addItManager(
+        addManager(
             {firstName, lastName, idNumber, password, email, phone, itManagerRepository}
         ).then(manager => {
             res.json({manager: manager})

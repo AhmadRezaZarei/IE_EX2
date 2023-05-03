@@ -13,10 +13,8 @@ connectionToMongoDB().then(props => {
 
 async function connectionToMongoDB() {
     await mongoose.connect('mongodb://127.0.0.1:2717/university');
-
     // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
 }
-
 
 routes(app, express)
 

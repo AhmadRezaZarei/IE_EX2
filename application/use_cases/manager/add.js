@@ -1,6 +1,6 @@
-import itManager from "../../../entities/itManager.js"
+import manager from "../../../entities/manager.js"
 
-const addItManager = function ({
+const addManager = function ({
                                    firstName,
                                    lastName,
                                    idNumber,
@@ -12,12 +12,12 @@ const addItManager = function ({
 
     // TODO: add a proper validation (consider using @hapi/joi)
 
-    const newItManager = itManager({firstName, lastName, idNumber, password, email, phone});
+    const newItManager = manager({firstName, lastName, idNumber, password, email, phone});
 
     return itManagerRepository.add(newItManager);
 }
 
 
-export default addItManager
+export default addManager
 
 //module.exports.addProfessor = addProfessor;

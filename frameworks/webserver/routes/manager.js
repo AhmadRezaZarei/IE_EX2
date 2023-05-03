@@ -1,5 +1,5 @@
 import itManagerController from "../../../adapters/controllers/itManagerController.js";
-import itManagerRepository from "../../../application/repositories/itManagerRepository.js";
+import itManagerRepository from "../../../application/repositories/ManagerRepository.js";
 import itManagerRepositoryMongoDB from "../../database/MongoDB/repositories/itManagerRepositoryMongoDB.js";
 
 const managerRouter = function (express) {

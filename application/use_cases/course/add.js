@@ -17,6 +17,6 @@ const addCourse = function ({
 }
 
 
-export default addManager
+export default addCourse
 
 //module.exports.addProfessor = addProfessor;

@@ -1,4 +1,4 @@
-import course from "../../../entities/course";
+import course from "../../../entities/course.js";
 
 const update = function ({
                              name,

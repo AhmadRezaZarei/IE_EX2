@@ -84,6 +84,7 @@ const courseController = function (
         const idNumber = req.params.id
 
 
+        console.log("ping ping")
         const {
             name,
             prerequisites,
@@ -97,6 +98,7 @@ const courseController = function (
                 prerequisites,
                 corequisites,
                 unitCount,
+                idNumber,
                 courseRepository
             }
         ).then(course => {

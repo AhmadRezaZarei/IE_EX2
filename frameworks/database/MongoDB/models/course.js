@@ -14,6 +14,9 @@ const CourseSchema = new Schema({
     },
     corequisites: {
         type: Object
+    },
+    unitCount: {
+        type: Number
     }
 });
 

@@ -13,7 +13,7 @@ const termCourseRepositoryMongoDB = function () {
             idNumber: termCourseEntity.getIdNumber(),
             courseId: termCourseEntity.getCourseId(),
             courseDataAndTime: termCourseEntity.getCourseDataAndTime(),
-            examDataAndTime:termCourseEntity.getExamDataAndTime(),
+            examDataAndTime: termCourseEntity.getExamDataAndTime(),
             location: termCourseEntity.getLocation(),
             professorId: termCourseEntity.getProfessorId(),
             capacity: termCourseEntity.getCapacity(),
@@ -29,11 +29,12 @@ const termCourseRepositoryMongoDB = function () {
         const updateCourse = {
             courseId: termCourseEntity.getCourseId(),
             courseDataAndTime: termCourseEntity.getCourseDataAndTime(),
-            examDataAndTime:termCourseEntity.getExamDataAndTime(),
+            examDataAndTime: termCourseEntity.getExamDataAndTime(),
             location: termCourseEntity.getLocation(),
             professorId: termCourseEntity.getProfessorId(),
             capacity: termCourseEntity.getCapacity(),
-            term: termCourseEntity.getTerm(),        }
+            term: termCourseEntity.getTerm()
+        }
 
         return TermCourseModel.findOneAndUpdate({idNumber: id}, {$set: updateCourse}, {new: true})
 

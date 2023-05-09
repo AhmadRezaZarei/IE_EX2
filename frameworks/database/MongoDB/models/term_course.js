@@ -3,6 +3,9 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const termCourseSchema = new Schema({
+    idNumber: {
+        type: String
+    },
     courseId: {
         type: String,
     },

@@ -1,4 +1,5 @@
 const termCourse = function ({
+                                idNumber,
                                  courseId,
                                  courseDataAndTime,
                                  examDataAndTime,
@@ -8,6 +9,7 @@ const termCourse = function ({
                                  term,
                              }) {
     return {
+        getIdNumber: () => idNumber,
         getCourseDataAndTime: () => courseDataAndTime,
         getExamDataAndTime: () => examDataAndTime,
         getLocation: () => location,

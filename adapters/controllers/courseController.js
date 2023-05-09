@@ -83,8 +83,6 @@ const courseController = function (
 
         const idNumber = req.params.id
 
-
-        console.log("ping ping")
         const {
             name,
             prerequisites,

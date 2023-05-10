@@ -9,7 +9,7 @@ import professorDbRepository from "../../../application/repositories/professorRe
 import professorRepositoryMongoDB from "../../database/MongoDB/repositories/professorRepositoryMongoDB.js";
 import authMiddleware from "../middlewares/authMiddleware";
 
-const managerSpecificRouter = function (express) {
+const specificRoleRouter = function (express) {
 
     const router = express.Router()
 
@@ -41,4 +41,4 @@ const managerSpecificRouter = function (express) {
     return router;
 
 }
-export default managerSpecificRouter;
+export default specificRoleRouter;

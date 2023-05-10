@@ -4,7 +4,7 @@ import managerRouter from "./manager.js";
 import courseRouter from "./course.js";
 import authMiddleware from "../middlewares/authMiddleware.js";
 import authRouter from "./auth.js";
-import managerSpecificRouter from "./manager_specific.js";
+import specificRoleRouter from "./manager_specific.js";
 
 const routes = function routes(app, express) {
 
@@ -18,7 +18,7 @@ const routes = function routes(app, express) {
 
     app.use("/", authRouter(express))
 
-    app.use("/", managerSpecificRouter(express))
+    app.use("/", specificRoleRouter(express))
 
 }
 

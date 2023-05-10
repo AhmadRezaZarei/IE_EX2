@@ -4,7 +4,6 @@ import authServiceInterface from '../../../application/service/authService.js';
 
 export default function authMiddleware(allowedRole) {
 
-
     return function (req, res, next) {
 
         // Get token from header

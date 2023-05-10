@@ -3,7 +3,12 @@ import CourseModel from "../models/course.js";
 
 const courseRepositoryMongoDB = function () {
 
-    const findAll = () => CourseModel.find({})
+    const findAll = (fieldOfStudy = null) => {
+
+        if (fieldOfStudy == null)
+            return CourseModel.find({})
+        return CourseModel.find({fieldOfStudy: fieldOfStudy})
+    }
 
     const findById = (id) => CourseModel.findOne({idNumber: id})
 

@@ -1,5 +1,5 @@
 const courseDbRepository = function (repository) {
-    const findAll = () => repository.findAll();
+    const findAll = (filedOfStudy = null) => repository.findAll(filedOfStudy);
     const findById = (id) => repository.findById(id);
     const add = (courseEntity) => repository.add(courseEntity);
     const updateById = (id, courseEntity) => repository.updateById(id, courseEntity);

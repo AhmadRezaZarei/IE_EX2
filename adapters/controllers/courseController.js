@@ -16,8 +16,8 @@ const courseController = function (
 
     const fetchAllCourses = (req, res, next) => {
 
-
-        findAll({courseRepository}).then(courses => {
+        const fieldOfStudy = req.query.fieldOfStudy === "" ? null : req.query.fieldOfStudy;
+        findAll({fieldOfStudy, courseRepository}).then(courses => {
             res.json({courses: courses})
         }).catch(err => {
             res.status(500).json(internalServerError)

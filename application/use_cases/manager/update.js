@@ -7,17 +7,16 @@ const update = function ({
                              password,
                              email,
                              phone,
-                             itManagerRepository
+                             faculty,
+                             managerRepository
                          }) {
 
     // TODO: add a proper validation (consider using @hapi/joi)
 
-    const managerEntity = manager({firstName, lastName, idNumber, password, email, phone});
+    const managerEntity = manager({firstName, lastName, idNumber, password, email, phone, faculty});
 
-    return itManagerRepository.updateById(idNumber, managerEntity);
+    return managerRepository.updateById(idNumber, managerEntity);
 }
 
 
 export default update
-
-//module.exports.addProfessor = addProfessor;

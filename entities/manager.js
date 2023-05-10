@@ -4,7 +4,8 @@ const manager = function ({
                               idNumber,
                               password,
                               email,
-                              phone
+                              phone,
+                              faculty
                           }) {
     return {
         getFirstName: () => firstName,
@@ -12,8 +13,8 @@ const manager = function ({
         getIdNumber: () => idNumber,
         getPassword: () => password,
         getEmail: () => email,
-        getPhone: () => phone
+        getPhone: () => phone,
+        getFaculty: () => faculty
     };
 }
 export default manager
-//module.exports.professor = professor;

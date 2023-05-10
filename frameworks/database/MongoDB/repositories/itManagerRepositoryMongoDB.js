@@ -1,43 +1,45 @@
-import ITManagerModel from "../models/it_manager.js";
+import ManagerModel from "../models/manager.js";
 
 
-const itManagerRepositoryMongoDB = function () {
+const managerRepositoryMongoDB = function () {
 
-    const findAll = () => ITManagerModel.find({})
+    const findAll = () => ManagerModel.find({})
 
-    const findById = (id) => ITManagerModel.findOne({idNumber: id})
+    const findById = (id) => ManagerModel.findOne({idNumber: id})
 
-    const add = (itManagerEntity) => {
+    const add = (managerEntity) => {
 
-        const newProf = new ITManagerModel({
-            firstName: itManagerEntity.getFirstName(),
-            lastName: itManagerEntity.getLastName(),
-            idNumber: itManagerEntity.getIdNumber(),
-            password: itManagerEntity.getPassword(),
-            email: itManagerEntity.getEmail(),
-            phone: itManagerEntity.getPhone()
+        const newManager = new ManagerModel({
+            firstName: managerEntity.getFirstName(),
+            lastName: managerEntity.getLastName(),
+            idNumber: managerEntity.getIdNumber(),
+            password: managerEntity.getPassword(),
+            email: managerEntity.getEmail(),
+            phone: managerEntity.getPhone(),
+            faculty: managerEntity.getFaculty()
         })
 
-        return newProf.save()
+        return newManager.save()
 
     }
 
-    const updateById = (id, itManagerEntity) => {
+    const updateById = (id, managerEntity) => {
 
-        const updatedItManager = {
-            firstName: itManagerEntity.getFirstName(),
-            lastName: itManagerEntity.getLastName(),
-            idNumber: itManagerEntity.getIdNumber(),
-            password: itManagerEntity.getPassword(),
-            email: itManagerEntity.getEmail(),
-            phone: itManagerEntity.getPhone(),
+        const updatedManager = {
+            firstName: managerEntity.getFirstName(),
+            lastName: managerEntity.getLastName(),
+            idNumber: managerEntity.getIdNumber(),
+            password: managerEntity.getPassword(),
+            email: managerEntity.getEmail(),
+            phone: managerEntity.getPhone(),
+            faculty: managerEntity.getFaculty()
         }
 
-        return ITManagerModel.findOneAndUpdate({idNumber: id}, {$set: updatedItManager}, {new: true})
+        return ManagerModel.findOneAndUpdate({idNumber: id}, {$set: updatedManager}, {new: true})
 
     }
 
-    const deleteById = (id) => ITManagerModel.deleteOne({idNumber: id})
+    const deleteById = (id) => ManagerModel.deleteOne({idNumber: id})
 
 
     return {
@@ -50,4 +52,4 @@ const itManagerRepositoryMongoDB = function () {
 
 }
 
-export default itManagerRepositoryMongoDB;
+export default managerRepositoryMongoDB;

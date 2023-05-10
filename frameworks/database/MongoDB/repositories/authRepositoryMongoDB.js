@@ -1,4 +1,4 @@
-import ITManagerModel from "../models/it_manager.js";
+import ManagerModel from "../models/manager.js";
 import StudentModel from "../models/student.js";
 import ProfessorModel from "../models/professor.js";
 
@@ -17,7 +17,7 @@ const authRepositoryMongoDB = function () {
                 model = ProfessorModel;
                 break
             case 'manager':
-                model = ITManagerModel
+                model = ManagerModel
                 break;
         }
 

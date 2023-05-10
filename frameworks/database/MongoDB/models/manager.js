@@ -20,9 +20,12 @@ const ITManagerSchema = new Schema({
     },
     phone: {
         type: String
+    },
+    faculty: {
+        type: String
     }
 });
 
-const ITManagerModel = mongoose.model('ITManager', ITManagerSchema);
+const ManagerModel = mongoose.model('Manager', ITManagerSchema);
 
-export default ITManagerModel
+export default ManagerModel

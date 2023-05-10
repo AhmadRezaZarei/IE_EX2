@@ -1,10 +1,10 @@
 const findAll = function ({
-                              itManagerRepository
+                              managerRepository
                           }) {
 
     // TODO: add a proper validation (consider using @hapi/joi)
 
-    return itManagerRepository.findAll()
+    return managerRepository.findAll()
 }
 
 

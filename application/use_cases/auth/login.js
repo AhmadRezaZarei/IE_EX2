@@ -1,17 +1,21 @@
-import course from "../../../entities/course.js"
-
-const addCourse = function ({
+const loginUser = function ({
                                 email,
                                 password,
                                 role,
+                                authService,
                                 authRepository
                             }) {
 
-    // TODO: add a proper validation (consider using @hapi/joi)
+    return authRepository.findUser(email, password, role).then(user => {
 
-    const newCourse = course({name, idNumber, prerequisites, corequisites, unitCount});
+        if (user) {
+            return authService.generateToken({role: role})
+        }
 
-    return courseRepository.add(newCourse);
+        return null
+
+    })
+
 }
 
-export default addCourse
+export default loginUser

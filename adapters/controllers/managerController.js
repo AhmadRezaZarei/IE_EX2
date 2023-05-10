@@ -4,18 +4,18 @@ import findAll from "../../application/use_cases/manager/findAll.js";
 import deleteById from "../../application/use_cases/manager/deleteById.js";
 import update from "../../application/use_cases/manager/update.js";
 
-const professorController = function (
+const managerController = function (
     itManagerDbRepository,
     itManagerDbRepositoryImpl
 ) {
 
     const internalServerError = {error: "Unknown error", errorCode: 500}
 
-    const itManagerRepository = itManagerDbRepository(itManagerDbRepositoryImpl())
+    const managerRepository = itManagerDbRepository(itManagerDbRepositoryImpl())
 
-    const fetchAllItManagers = (req, res, next) => {
+    const fetchAllManagers = (req, res, next) => {
 
-        findAll({itManagerRepository}).then(managers => {
+        findAll({managerRepository}).then(managers => {
             res.json({managers: managers})
         }).catch(err => {
             res.status(500).json(internalServerError)
@@ -23,13 +23,13 @@ const professorController = function (
 
     }
 
-    const addNewItManager = (req, res, next) => {
+    const addNewManager = (req, res, next) => {
 
         const idNumber = Date.now()
-        const {firstName, lastName, email, password, phone} = req.body
+        const {firstName, lastName, email, password, phone, faculty} = req.body
 
         addManager(
-            {firstName, lastName, idNumber, password, email, phone, itManagerRepository}
+            {firstName, lastName, idNumber, password, email, phone, faculty, managerRepository}
         ).then(manager => {
             res.json({manager: manager})
         }).catch(err => {
@@ -38,11 +38,11 @@ const professorController = function (
 
     }
 
-    const deleteItManager = (req, res, next) => {
+    const deleteManager = (req, res, next) => {
 
         const idNumber = req.params.id
 
-        deleteById({idNumber, itManagerRepository})
+        deleteById({idNumber, managerRepository})
             .then(manager => {
                 res.json({manager: manager})
             }).catch(err => {
@@ -52,11 +52,11 @@ const professorController = function (
 
     }
 
-    const fetchItManagerById = (req, res, next) => {
+    const fetchManagerById = (req, res, next) => {
 
         const idNumber = req.params.id
 
-        findById({idNumber, itManagerRepository}).then(manager => {
+        findById({idNumber, managerRepository}).then(manager => {
             res.json({manager: manager})
         }).catch(err => {
             res.status(500).json(internalServerError)
@@ -64,15 +64,15 @@ const professorController = function (
 
     }
 
-    const updateItManager = (req, res, next) => {
+    const updateManager = (req, res, next) => {
 
 
         const idNumber = req.params.id
 
-        const {firstName, lastName, email, password, rank, phone} = req.body
+        const {firstName, lastName, email, password, phone, faculty} = req.body
 
         update(
-            {firstName, lastName, idNumber, password, email, phone, itManagerRepository}
+            {firstName, lastName, idNumber, password, email, phone, faculty, managerRepository}
         ).then(manager => {
             res.json({manager: manager})
         }).catch(err => {
@@ -84,15 +84,15 @@ const professorController = function (
 
 
     return {
-        fetchAllItManagers,
-        addNewItManager,
-        deleteItManager,
-        fetchItManagerById,
-        updateItManager
+        fetchAllManagers,
+        addNewManager,
+        deleteManager,
+        fetchManagerById,
+        updateManager
     }
 
 
 }
 
 
-export default professorController;
+export default managerController;

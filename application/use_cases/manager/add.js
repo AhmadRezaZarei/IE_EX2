@@ -1,22 +1,22 @@
 import manager from "../../../entities/manager.js"
 
 const addManager = function ({
-                                   firstName,
-                                   lastName,
-                                   idNumber,
-                                   password,
-                                   email,
-                                   phone,
-                                   itManagerRepository
-                               }) {
+                                 firstName,
+                                 lastName,
+                                 idNumber,
+                                 password,
+                                 email,
+                                 phone,
+                                 faculty,
+                                 managerRepository
+                             }) {
 
     // TODO: add a proper validation (consider using @hapi/joi)
 
-    const newItManager = manager({firstName, lastName, idNumber, password, email, phone});
+    const newManager = manager({firstName, lastName, idNumber, password, email, phone, faculty});
 
-    return itManagerRepository.add(newItManager);
+    return managerRepository.add(newManager);
 }
-
 
 export default addManager
 

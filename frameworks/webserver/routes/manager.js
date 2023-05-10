@@ -1,22 +1,22 @@
-import itManagerController from "../../../adapters/controllers/itManagerController.js";
-import itManagerRepository from "../../../application/repositories/ManagerRepository.js";
-import itManagerRepositoryMongoDB from "../../database/MongoDB/repositories/itManagerRepositoryMongoDB.js";
+import managerController from "../../../adapters/controllers/managerController.js";
+import managerDbRepository from "../../../application/repositories/ManagerRepository.js";
+import managerRepositoryMongoDB from "../../database/MongoDB/repositories/itManagerRepositoryMongoDB.js";
 
 const managerRouter = function (express) {
 
     const router = express.Router()
 
-    const controller = itManagerController(itManagerRepository, itManagerRepositoryMongoDB)
+    const controller = managerController(managerDbRepository, managerRepositoryMongoDB)
 
-    router.post("/manager/", controller.addNewItManager)
+    router.post("/manager/", controller.addNewManager)
 
-    router.get("/manager/:id", controller.fetchItManagerById)
+    router.get("/manager/:id", controller.fetchManagerById)
 
-    router.get("/managers", controller.fetchAllItManagers)
+    router.get("/managers", controller.fetchAllManagers)
 
-    router.delete("/manager/:id", controller.deleteItManager)
+    router.delete("/manager/:id", controller.deleteManager)
 
-    router.put("/manager/:id", controller.updateItManager)
+    router.put("/manager/:id", controller.updateManager)
 
     return router;
 

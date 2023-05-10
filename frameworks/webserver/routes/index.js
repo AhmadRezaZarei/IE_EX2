@@ -9,7 +9,7 @@ const routes = function routes(app, express) {
 
     app.use(express.json())
 
-    app.use("/admin/", authMiddleware("it_manager"))
+    app.use("/admin/", authMiddleware("admin"))
     app.use("/admin/", professorRouter(express))
     app.use("/admin/", studentRouter(express))
     app.use("/admin/", managerRouter(express))

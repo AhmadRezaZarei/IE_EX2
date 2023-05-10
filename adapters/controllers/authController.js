@@ -8,12 +8,10 @@ const authController = function (
 ) {
 
     const internalServerError = {error: "Unknown error", errorCode: 500}
-
     const authRepository = authDbRepository(authDbRepositoryImpl())
     const authService = authServiceInterface(authServiceImpl())
 
     const login = (req, res, next) => {
-
 
         const {
             email,
@@ -35,11 +33,9 @@ const authController = function (
         })
     }
 
-
     return {
-        login,
+        login
     }
-
 
 }
 

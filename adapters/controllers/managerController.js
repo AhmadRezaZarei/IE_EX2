@@ -49,7 +49,6 @@ const managerController = function (
             res.status(500).json(internalServerError)
         })
 
-
     }
 
     const fetchManagerById = (req, res, next) => {
@@ -66,7 +65,6 @@ const managerController = function (
 
     const updateManager = (req, res, next) => {
 
-
         const idNumber = req.params.id
 
         const {firstName, lastName, email, password, phone, faculty} = req.body
@@ -78,7 +76,6 @@ const managerController = function (
         }).catch(err => {
             res.status(500).json(internalServerError)
         })
-
 
     }
 

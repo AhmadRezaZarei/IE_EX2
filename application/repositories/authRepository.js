@@ -4,7 +4,7 @@ const authRepository = function (repository) {
 
     return {
         findUser
-    };
+    }
 }
 
 export default authRepository

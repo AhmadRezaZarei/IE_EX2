@@ -1,4 +1,4 @@
-export default function authService(service) {
+const authServiceInterface = function(service) {
     const encryptPassword = (password) => service.encryptPassword(password);
 
     const compare = (password, hashedPassword) =>
@@ -15,3 +15,5 @@ export default function authService(service) {
         generateToken
     };
 }
+
+export default authServiceInterface

@@ -1,21 +1,22 @@
-const express = require("express")
-const mongoose = require("mongoose")
+import routes from "./frameworks/webserver/routes/index.js";
+import express from "express"
+import mongoose from "mongoose";
+
 const app = express()
 
 const port = 3000
 
 
-main().catch(err => console.log(err));
+connectionToMongoDB().then(props => {
+    console.log("connected to mongodb")
+}).catch(err => console.log(err));
 
-async function main() {
+async function connectionToMongoDB() {
     await mongoose.connect('mongodb://127.0.0.1:2717/university');
-
     // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
 }
 
-app.get("/", (req, res) => {
-    res.send("Hello")
-})
+routes(app, express)
 
 app.listen(port, () => {
     console.log("listening")

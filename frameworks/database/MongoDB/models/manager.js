@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 const Schema = mongoose.Schema;
 
-const ITManagerSchema = new Schema({
+const ManagerSchema = new Schema({
     firstName: {
         type: String,
     },
@@ -20,9 +20,11 @@ const ITManagerSchema = new Schema({
     },
     phone: {
         type: String
+    },
+    faculty: {
+        type: String
     }
 });
 
-const ITManagerModel = mongoose.model('ITManager', ITManagerSchema);
-
-export default ITManagerModel;
+const ManagerModel = mongoose.model('Manager', ManagerSchema);
+export default ManagerModel

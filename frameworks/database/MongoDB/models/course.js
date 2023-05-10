@@ -17,6 +17,9 @@ const CourseSchema = new Schema({
     },
     unitCount: {
         type: Number
+    },
+    fieldOfStudy: {
+        type: String
     }
 });
 

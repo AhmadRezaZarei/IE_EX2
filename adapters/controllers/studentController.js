@@ -81,6 +81,11 @@ const studentController = function (
 
         const idNumber = req.params.id
 
+        if (req.header.role === "student" && req.header.idNumber !== idNumber) {
+            res.status(403).json({error: "Forbidden", errorCode: 403})
+            return
+        }
+
         const {firstName, lastName, email, password, rank, phone, faculty, fieldOfStudy} = req.body
 
         update(

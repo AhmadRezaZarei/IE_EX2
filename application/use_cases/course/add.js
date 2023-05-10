@@ -6,12 +6,14 @@ const addCourse = function ({
                                 prerequisites,
                                 corequisites,
                                 unitCount,
-                                courseRepository
+                                fieldOfStudy,
+                                courseRepository,
+
                             }) {
 
     // TODO: add a proper validation (consider using @hapi/joi)
 
-    const newCourse = course({name, idNumber, prerequisites, corequisites, unitCount});
+    const newCourse = course({name, idNumber, prerequisites, corequisites, unitCount, fieldOfStudy});
 
     return courseRepository.add(newCourse);
 }

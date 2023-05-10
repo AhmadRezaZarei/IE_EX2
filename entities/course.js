@@ -4,6 +4,7 @@ const course = function ({
                              prerequisites,
                              corequisites,
                              unitCount,
+                             fieldOfStudy
                          }) {
     return {
         getName: () => name,
@@ -11,6 +12,7 @@ const course = function ({
         getPrerequisites: () => prerequisites,
         getCorequisites: () => corequisites,
         getUnitCount: () => unitCount,
+        getFieldOfStudy: () => fieldOfStudy
     };
 }
 

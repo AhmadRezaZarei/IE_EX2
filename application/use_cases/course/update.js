@@ -6,12 +6,13 @@ const update = function ({
                              prerequisites,
                              corequisites,
                              unitCount,
-                             courseRepository
+                             courseRepository,
+                             fieldOfStudy
                          }) {
 
     // TODO: add a proper validation (consider using @hapi/joi)
 
-    const courseEntity = course({name, idNumber, prerequisites, corequisites, unitCount});
+    const courseEntity = course({name, idNumber, prerequisites, corequisites, unitCount, fieldOfStudy});
 
     return courseRepository.updateById(idNumber, courseEntity);
 }

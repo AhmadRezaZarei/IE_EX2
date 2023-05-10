@@ -70,6 +70,11 @@ const professorController = function (
 
         const idNumber = req.params.id
 
+        if (req.header.role === "professor" && req.header.idNumber !== idNumber) {
+            res.status(403).send({error: "Forbidden", errorCode: 403})
+            return
+        }
+
         const {firstName, lastName, email, password, rank, phone, faculty, fieldOfStudy} = req.body
 
         update(
@@ -80,9 +85,7 @@ const professorController = function (
             res.status(500).json(internalServerError)
         })
 
-
     }
-
 
     return {
         fetchAllProfessors,

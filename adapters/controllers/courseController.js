@@ -16,6 +16,7 @@ const courseController = function (
 
     const fetchAllCourses = (req, res, next) => {
 
+
         findAll({courseRepository}).then(courses => {
             res.json({courses: courses})
         }).catch(err => {
@@ -33,6 +34,7 @@ const courseController = function (
             prerequisites,
             corequisites,
             unitCount,
+            fieldOfStudy
         } = req.body
 
         addCourse(
@@ -42,6 +44,7 @@ const courseController = function (
                 prerequisites,
                 corequisites,
                 unitCount,
+                fieldOfStudy,
                 courseRepository
             }
         ).then(course => {
@@ -88,6 +91,7 @@ const courseController = function (
             prerequisites,
             corequisites,
             unitCount,
+            fieldOfStudy
         } = req.body
 
         update(
@@ -97,6 +101,7 @@ const courseController = function (
                 corequisites,
                 unitCount,
                 idNumber,
+                fieldOfStudy,
                 courseRepository
             }
         ).then(course => {

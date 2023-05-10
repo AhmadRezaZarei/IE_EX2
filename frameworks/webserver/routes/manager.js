@@ -1,6 +1,6 @@
 import managerController from "../../../adapters/controllers/managerController.js";
 import managerDbRepository from "../../../application/repositories/ManagerRepository.js";
-import managerRepositoryMongoDB from "../../database/MongoDB/repositories/itManagerRepositoryMongoDB.js";
+import managerRepositoryMongoDB from "../../database/MongoDB/repositories/managerRepositoryMongoDB.js";
 
 const managerRouter = function (express) {
 

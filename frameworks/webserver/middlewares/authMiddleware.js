@@ -2,7 +2,7 @@ import authServiceImpl from '../../services/authService.js';
 import authServiceInterface from '../../../application/service/authService.js';
 
 
-export default function authMiddleware(allowedRole) {
+export default function authMiddleware(allowedRoles) {
 
     return function (req, res, next) {
 
@@ -16,8 +16,9 @@ export default function authMiddleware(allowedRole) {
         try {
             const decoded = authService.verify(token.split(' ')[1]);
             req.role = decoded.role;
+            req.idNumber = decoded.idNumber
 
-            if (req.role !== allowedRole) {
+            if (!allowedRoles.includes(req.role)) {
                 res.status(401).json({"error": "Invalid token", errorCode: 401})
                 return;
             }

@@ -10,7 +10,7 @@ const routes = function routes(app, express) {
 
     app.use(express.json())
 
-    app.use("/admin/", authMiddleware("admin"))
+    app.use("/admin/", authMiddleware(["admin"]))
     app.use("/admin/", professorRouter(express))
     app.use("/admin/", studentRouter(express))
     app.use("/admin/", managerRouter(express))
@@ -18,8 +18,7 @@ const routes = function routes(app, express) {
 
     app.use("/", authRouter(express))
 
-
-    app.use(managerSpecificRouter(express))
+    app.use("/", managerSpecificRouter(express))
 
 }
 

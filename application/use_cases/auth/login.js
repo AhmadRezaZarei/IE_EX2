@@ -9,7 +9,7 @@ const loginUser = function ({
     return authRepository.findUser(email, password, role).then(user => {
 
         if (user) {
-            return authService.generateToken({role: role})
+            return authService.generateToken({role: role, idNumber: user.idNumber})
         }
 
         return null

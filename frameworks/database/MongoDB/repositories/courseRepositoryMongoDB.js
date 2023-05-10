@@ -15,6 +15,7 @@ const courseRepositoryMongoDB = function () {
             prerequisites: courseEntity.getPrerequisites(),
             corequisites: courseEntity.getCorequisites(),
             unitCount: courseEntity.getUnitCount(),
+            fieldOfStudy: courseEntity.getFieldOfStudy()
         })
 
         return newCourse.save()
@@ -29,7 +30,7 @@ const courseRepositoryMongoDB = function () {
             prerequisites: courseEntity.getPrerequisites(),
             corequisites: courseEntity.getCorequisites(),
             unitCount: courseEntity.getUnitCount(),
-
+            fieldOfStudy: courseEntity.getFieldOfStudy()
         }
 
         return CourseModel.findOneAndUpdate({idNumber: id}, {$set: updateCourse}, {new: true})

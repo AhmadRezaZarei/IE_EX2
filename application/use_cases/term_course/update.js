@@ -1,5 +1,4 @@
-import course from "../../../entities/course.js";
-import termCourse from "../../../entities/termCourse";
+import termCourse from "../../../entities/termCourse.js";
 
 const update = function ({
                              idNumber,

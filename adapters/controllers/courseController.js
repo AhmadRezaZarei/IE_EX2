@@ -82,7 +82,7 @@ const courseController = function (
                 term,
                 termCourseRepository
             }).then(course => {
-                res.json({course: course})
+                res.json({termCourse: course})
             }).catch(err => {
                 res.status(500).json(internalServerError)
             })
@@ -125,7 +125,7 @@ const courseController = function (
         if (isTermCourse) {
             deleteTermCourseById({idNumber, termCourseRepository})
                 .then(course => {
-                    res.json({course: course})
+                    res.json({termCourse: course})
                 }).catch(err => {
                 res.status(500).json(internalServerError)
             })

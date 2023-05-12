@@ -7,36 +7,38 @@ import studentRepositoryMongoDB from "../../database/MongoDB/repositories/studen
 import professorController from "../../../adapters/controllers/professorController.js";
 import professorDbRepository from "../../../application/repositories/professorRepository.js";
 import professorRepositoryMongoDB from "../../database/MongoDB/repositories/professorRepositoryMongoDB.js";
-import authMiddleware from "../middlewares/authMiddleware";
+import authMiddleware from "../middlewares/authMiddleware.js";
+import termCourseDbRepository from "../../../application/repositories/TermCourseRepository.js";
+import termCourseRepositoryMongoDB from "../../database/MongoDB/repositories/termCourseRepositoryMongoDB.js";
 
 const specificRoleRouter = function (express) {
 
     const router = express.Router()
 
-    const courseController = courseController(courseDbRepository, courseRepositoryMongoDB)
-    const studentController = studentController(studentDbRepository, studentRepositoryMongoDB)
-    const professorController = professorController(professorDbRepository, professorRepositoryMongoDB)
+    const mCourseController = courseController(courseDbRepository, courseRepositoryMongoDB, termCourseDbRepository, termCourseRepositoryMongoDB)
+    const mStudentController = studentController(studentDbRepository, studentRepositoryMongoDB)
+    const mProfessorController = professorController(professorDbRepository, professorRepositoryMongoDB)
 
     const managerMiddleware = authMiddleware(["manager"])
     const managerAndStudentAndProfessorMiddleware = authMiddleware(["student", "manager", "professor"])
     const studentMiddleware = authMiddleware(["student"])
     const professorMiddleware = authMiddleware(["professor"])
 
-    router.post("/course", managerMiddleware, courseController.addNewCourse)
+    router.post("/course", managerMiddleware, mCourseController.addNewCourse)
 
 
-    router.get("/course/:id", managerAndStudentAndProfessorMiddleware, courseController.fetchCourseById)
-    router.get("/courses", managerAndStudentAndProfessorMiddleware, courseController.fetchAllCourses)
+    router.get("/course/:id", managerAndStudentAndProfessorMiddleware, mCourseController.fetchCourseById)
+    router.get("/courses", managerAndStudentAndProfessorMiddleware, mCourseController.fetchAllCourses)
 
-    router.delete("/course/:id", managerMiddleware, courseController.deleteCourse)
-    router.put("/course/:id", managerMiddleware, courseController.updateCourse)
-    router.get("/students", managerMiddleware, studentController.fetchAllStudents)
-    router.get("/student/:id", managerMiddleware, studentController.fetchStudentById)
-    router.get("/professors", managerMiddleware, professorController.fetchAllProfessors)
-    router.get("/professors/:id", managerMiddleware, professorController.fetchProfessorById)
+    router.delete("/course/:id", managerMiddleware, mCourseController.deleteCourse)
+    router.put("/course/:id", managerMiddleware, mCourseController.updateCourse)
+    router.get("/students", managerMiddleware, mStudentController.fetchAllStudents)
+    router.get("/student/:id", managerMiddleware, mStudentController.fetchStudentById)
+    router.get("/professors", managerMiddleware, mProfessorController.fetchAllProfessors)
+    router.get("/professors/:id", managerMiddleware, mProfessorController.fetchProfessorById)
 
-    router.put("/student/:id", studentMiddleware, studentController.updateStudent)
-    router.put("/professor/:id", professorMiddleware, professorController.updateProfessor)
+    router.put("/student/:id", studentMiddleware, mStudentController.updateStudent)
+    router.put("/professor/:id", professorMiddleware, mProfessorController.updateProfessor)
 
     return router;
 

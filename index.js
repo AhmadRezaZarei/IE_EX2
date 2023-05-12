@@ -4,20 +4,19 @@ import mongoose from "mongoose";
 
 const app = express()
 
-const port = 3000
-
+const port = process.env.PORT || 3000
+const connectionString = process.env.connection_string || "mongodb://127.0.0.1:2717/university"
 
 connectionToMongoDB().then(props => {
     console.log("connected to mongodb")
 }).catch(err => console.log(err));
 
 async function connectionToMongoDB() {
-    await mongoose.connect('mongodb://127.0.0.1:2717/university');
-    // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
+    await mongoose.connect(connectionString);
 }
 
 routes(app, express)
 
 app.listen(port, () => {
-    console.log("listening")
+    console.log(`listening on port ${port}`)
 })

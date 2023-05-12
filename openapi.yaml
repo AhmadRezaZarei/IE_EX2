@@ -1,0 +1,1110 @@
+
+"openapi": "3.0.3"
+"info":
+  "title": "EX2"
+  "version": "1.0.0"
+  "contact": {}
+"servers":
+  -
+    "url": "localhost"
+"paths":
+  "/admin/professor":
+    "post":
+      "tags":
+        - "Admin"
+        - "Professor"
+      "summary": "Add professor"
+      "description": "Add professor"
+      "operationId": "addProfessor"
+      "parameters":
+        -
+          "in": "header"
+          "name": "Authorization"
+          "schema":
+            "type": "string"
+            "format": "uuid"
+          "required": true
+      "requestBody":
+        "content":
+          "application/json":
+            "schema":
+              "type": "object"
+              "properties":
+                "email":
+                  "type": "string"
+                  "example": "ahmadreza0zarei@mail.com"
+                "faculty":
+                  "type": "string"
+                  "example": "computer sci"
+                "fieldOfStudy":
+                  "type": "string"
+                  "example": "sci"
+                "firstName":
+                  "type": "string"
+                  "example": "first name"
+                "lastName":
+                  "type": "string"
+                  "example": "last name"
+                "password":
+                  "type": "string"
+                  "example": "password"
+                "phone":
+                  "type": "string"
+                  "example": "0919453923"
+                "rank":
+                  "type": "string"
+                  "example": "rank-1"
+            "example":
+              "email": "ahmadreza0zarei@mail.com"
+              "faculty": "computer sci"
+              "fieldOfStudy": "sci"
+              "firstName": "first name"
+              "lastName": "last name"
+              "password": "password"
+              "phone": "0919453923"
+              "rank": "rank-1"
+      "responses":
+        "200":
+          "description": ""
+  "/admin/professor/{id}":
+    "get":
+      "tags":
+        - "Admin"
+        - "Professor"
+      "summary": "Get professor by id"
+      "description": "Get professor by id"
+      "operationId": "getProfessorById"
+      "parameters":
+        -
+          "in": "header"
+          "name": "Authorization"
+          "schema":
+            "type": "string"
+            "format": "uuid"
+          "required": true
+      "responses":
+        "200":
+          "description": ""
+    "put":
+      "tags":
+        - "Admin"
+        - "Professor"
+      "summary": "Update professor"
+      "description": "Update professor"
+      "operationId": "updateProfessor"
+      "parameters":
+        -
+          "in": "header"
+          "name": "Authorization"
+          "schema":
+            "type": "string"
+            "format": "uuid"
+          "required": true
+      "requestBody":
+        "content":
+          "application/json":
+            "schema":
+              "type": "object"
+              "properties":
+                "email":
+                  "type": "string"
+                  "example": "ahmadreza0zarei@mail.com"
+                "faculty":
+                  "type": "string"
+                  "example": "computer sci"
+                "fieldOfStudy":
+                  "type": "string"
+                  "example": "sci"
+                "firstName":
+                  "type": "string"
+                  "example": "first new ewnew new new ew"
+                "idNumber":
+                  "type": "string"
+                  "example": "1682462098402"
+                "lastName":
+                  "type": "string"
+                  "example": "last name"
+                "password":
+                  "type": "string"
+                  "example": "password"
+                "phone":
+                  "type": "string"
+                  "example": "0919453923"
+                "rank":
+                  "type": "string"
+                  "example": "rank-1"
+            "example":
+              "email": "ahmadreza0zarei@mail.com"
+              "faculty": "computer sci"
+              "fieldOfStudy": "sci"
+              "firstName": "first new ewnew new new ew"
+              "idNumber": "1682462098402"
+              "lastName": "last name"
+              "password": "password"
+              "phone": "0919453923"
+              "rank": "rank-1"
+      "responses":
+        "200":
+          "description": ""
+    "delete":
+      "tags":
+        - "Admin"
+        - "Professor"
+      "summary": "Delete professor"
+      "description": "Delete professor"
+      "operationId": "deleteProfessor"
+      "responses":
+        "200":
+          "description": ""
+    "parameters":
+      -
+        "name": "id"
+        "in": "path"
+        "required": true
+        "schema":
+          "type": "string"
+      -
+        "name": "Authorization"
+        "in": "header"
+        "required": true
+        "schema":
+          "type": "string"
+  "/admin/professors/":
+    "get":
+      "tags":
+        - "Admin"
+        - "Professor"
+      "summary": "Fetch all professors"
+      "description": "Fetch all professors"
+      "operationId": "fetchAllProfessors"
+      "parameters":
+        -
+          "in": "header"
+          "name": "Authorization"
+          "schema":
+            "type": "string"
+            "format": "uuid"
+          "required": true
+      "responses":
+        "200":
+          "description": ""
+  "/admin/student":
+    "post":
+      "tags":
+        - "Admin"
+        - "Student"
+      "summary": "Add new student"
+      "description": "Add new student"
+      "operationId": "addNewStudent"
+      "parameters":
+        -
+          "in": "header"
+          "name": "Authorization"
+          "schema":
+            "type": "string"
+            "format": "uuid"
+          "required": true
+      "requestBody":
+        "content":
+          "application/json":
+            "schema":
+              "type": "object"
+              "properties":
+                "email":
+                  "type": "string"
+                  "example": "dadsadas@gsdfsdf.com"
+                "entranceYear":
+                  "type": "string"
+                  "example": "2019"
+                "faculty":
+                  "type": "string"
+                  "example": "CS"
+                "fieldOfStudy":
+                  "type": "string"
+                  "example": "C"
+                "firstName":
+                  "type": "string"
+                  "example": "Mohammad Hosein"
+                "grade":
+                  "type": "string"
+                  "example": "karshenasi"
+                "lastName":
+                  "type": "string"
+                  "example": "Khorami"
+                "mean":
+                  "type": "number"
+                  "example": 19.4
+                "password":
+                  "type": "string"
+                  "example": "password"
+                "phone":
+                  "type": "string"
+                  "example": "2312421312"
+            "example":
+              "email": "dadsadas@gsdfsdf.com"
+              "entranceYear": "2019"
+              "faculty": "CS"
+              "fieldOfStudy": "C"
+              "firstName": "Mohammad Hosein"
+              "grade": "karshenasi"
+              "lastName": "Khorami"
+              "mean": 19.4
+              "password": "password"
+              "phone": "2312421312"
+      "responses":
+        "200":
+          "description": ""
+  "/admin/students":
+    "get":
+      "tags":
+        - "Admin"
+        - "Student"
+      "summary": "Fetch students"
+      "description": "Fetch students"
+      "operationId": "fetchStudents"
+      "parameters":
+        -
+          "in": "header"
+          "name": "Authorization"
+          "schema":
+            "type": "string"
+            "format": "uuid"
+          "required": true
+      "responses":
+        "200":
+          "description": ""
+  "/admin/student/{id}":
+    "get":
+      "tags":
+        - "Admin"
+        - "Student"
+      "summary": "Fetch student by id"
+      "description": "Fetch student by id"
+      "operationId": "fetchStudentById"
+      "parameters":
+        -
+          "in": "header"
+          "name": "Authorization"
+          "schema":
+            "type": "string"
+            "format": "uuid"
+          "required": true
+      "responses":
+        "200":
+          "description": ""
+    "put":
+      "tags":
+        - "Admin"
+        - "Student"
+      "summary": "Update student"
+      "description": "Update student"
+      "operationId": "updateStudent"
+      "parameters":
+        -
+          "in": "header"
+          "name": "Authorization"
+          "schema":
+            "type": "string"
+            "format": "uuid"
+          "required": true
+      "requestBody":
+        "content":
+          "application/json":
+            "schema":
+              "type": "object"
+              "properties":
+                "email":
+                  "type": "string"
+                  "example": "email"
+                "entranceYear":
+                  "type": "string"
+                  "example": "2019"
+                "faculty":
+                  "type": "string"
+                  "example": "CS"
+                "fieldOfStudy":
+                  "type": "string"
+                  "example": "C"
+                "firstName":
+                  "type": "string"
+                  "example": "student name new"
+                "grade":
+                  "type": "string"
+                  "example": "karshenasi"
+                "lastName":
+                  "type": "string"
+                  "example": "student last name"
+                "mean":
+                  "type": "number"
+                  "example": 19.4
+                "password":
+                  "type": "string"
+                  "example": "password"
+                "phone":
+                  "type": "string"
+                  "example": "2312421312"
+            "example":
+              "email": "email"
+              "entranceYear": "2019"
+              "faculty": "CS"
+              "fieldOfStudy": "C"
+              "firstName": "student name new"
+              "grade": "karshenasi"
+              "lastName": "student last name"
+              "mean": 19.4
+              "password": "password"
+              "phone": "2312421312"
+      "responses":
+        "200":
+          "description": ""
+    "delete":
+      "tags":
+        - "Admin"
+        - "Student"
+      "summary": "Delete students"
+      "description": "Delete students"
+      "operationId": "deleteStudents"
+      "parameters":
+        -
+          "in": "header"
+          "name": "Authorization"
+          "schema":
+            "type": "string"
+            "format": "uuid"
+          "required": true
+      "responses":
+        "200":
+          "description": ""
+    "parameters":
+      -
+        "name": "id"
+        "in": "path"
+        "required": true
+        "schema":
+          "type": "string"
+  "/admin/manager":
+    "post":
+      "tags":
+        - "Admin"
+        - "Manager"
+      "summary": "Add new manager"
+      "description": "Add new manager"
+      "operationId": "addNewManager"
+      "parameters":
+        -
+          "in": "header"
+          "name": "Authorization"
+          "schema":
+            "type": "string"
+          "required": true
+      "requestBody":
+        "content":
+          "application/json":
+            "schema":
+              "type": "object"
+              "properties":
+                "email":
+                  "type": "string"
+                  "example": "email"
+                "firstName":
+                  "type": "string"
+                  "example": "manager name"
+                "lastName":
+                  "type": "string"
+                  "example": "student last name"
+                "password":
+                  "type": "string"
+                  "example": "password"
+            "example":
+              "email": "email"
+              "firstName": "manager name"
+              "lastName": "student last name"
+              "password": "password"
+      "responses":
+        "200":
+          "description": ""
+  "/admin/managers":
+    "get":
+      "tags":
+        - "Admin"
+        - "Manager"
+      "summary": "Fetch managers"
+      "description": "Fetch managers"
+      "operationId": "fetchManagers"
+      "parameters":
+        -
+          "in": "header"
+          "name": "Authorization"
+          "schema":
+            "type": "string"
+          "required": true
+      "responses":
+        "200":
+          "description": ""
+  "/admin/manager/{id}":
+    "get":
+      "tags":
+        - "Admin"
+        - "Manager"
+      "summary": "Fetch manager by id"
+      "description": "Fetch manager by id"
+      "operationId": "fetchManagerById"
+      "parameters":
+        -
+          "in": "header"
+          "name": "Authorization"
+          "schema":
+            "type": "string"
+          "required": true
+      "responses":
+        "200":
+          "description": ""
+    "put":
+      "tags":
+        - "Admin"
+        - "Manager"
+      "summary": "Update manager"
+      "description": "Update manager"
+      "operationId": "updateManager"
+      "parameters":
+        -
+          "in": "header"
+          "name": "Authorization"
+          "schema":
+            "type": "string"
+          "required": true
+      "requestBody":
+        "content":
+          "application/json":
+            "schema":
+              "type": "object"
+              "properties":
+                "email":
+                  "type": "string"
+                  "example": "email"
+                "firstName":
+                  "type": "string"
+                  "example": "student name reza"
+                "lastName":
+                  "type": "string"
+                  "example": "student last name"
+                "password":
+                  "type": "string"
+                  "example": "password"
+                "phone":
+                  "type": "string"
+                  "example": "2312421312"
+            "example":
+              "email": "email"
+              "firstName": "student name reza"
+              "lastName": "student last name"
+              "password": "password"
+              "phone": "2312421312"
+      "responses":
+        "200":
+          "description": ""
+    "delete":
+      "tags":
+        - "Admin"
+        - "Manager"
+      "summary": "Delete manager"
+      "description": "Delete manager"
+      "operationId": "deleteManager"
+      "parameters":
+        -
+          "in": "header"
+          "name": "Authorization"
+          "schema":
+            "type": "string"
+          "required": true
+      "responses":
+        "200":
+          "description": ""
+    "parameters":
+      -
+        "name": "id"
+        "in": "path"
+        "required": true
+        "schema":
+          "type": "string"
+  "/admin/course":
+    "post":
+      "tags":
+        - "Admin"
+        - "Course"
+      "summary": "Add new course"
+      "description": "Add new course"
+      "operationId": "addNewCourse"
+      "parameters":
+        -
+          "in": "header"
+          "name": "Authorization"
+          "schema":
+            "type": "string"
+          "required": true
+      "requestBody":
+        "content":
+          "application/json":
+            "schema":
+              "type": "object"
+              "properties":
+                "corequisites":
+                  "type": "array"
+                  "items":
+                    "type": "string"
+                    "example": "3"
+                  "example":
+                    - "3"
+                    - "4"
+                "name":
+                  "type": "string"
+                  "example": "Math"
+                "prerequisites":
+                  "type": "array"
+                  "items":
+                    "type": "string"
+                    "example": "1"
+                  "example":
+                    - "1"
+                    - "2"
+                "unitCount":
+                  "type": "number"
+                  "example": 3
+            "example":
+              "corequisites":
+                - "3"
+                - "4"
+              "name": "Math"
+              "prerequisites":
+                - "1"
+                - "2"
+              "unitCount": 3
+      "responses":
+        "200":
+          "description": ""
+  "/admin/course/{id}":
+    "get":
+      "tags":
+        - "Admin"
+        - "Course"
+      "summary": "Fetch course by id"
+      "description": "Fetch course by id"
+      "operationId": "fetchCourseById"
+      "parameters":
+        -
+          "in": "header"
+          "name": "Authorization"
+          "schema":
+            "type": "string"
+          "required": true
+      "responses":
+        "200":
+          "description": ""
+    "put":
+      "tags":
+        - "Admin"
+        - "Course"
+      "summary": "update course"
+      "description": "update course"
+      "operationId": "updateCourse"
+      "parameters":
+        -
+          "in": "header"
+          "name": "Authorization"
+          "schema":
+            "type": "string"
+          "required": true
+      "requestBody":
+        "content":
+          "application/json":
+            "schema":
+              "type": "object"
+              "properties":
+                "corequisites":
+                  "type": "array"
+                  "items":
+                    "type": "string"
+                    "example": "3"
+                  "example":
+                    - "3"
+                    - "4"
+                "name":
+                  "type": "string"
+                  "example": "Math new"
+                "prerequisites":
+                  "type": "array"
+                  "items":
+                    "type": "string"
+                    "example": "1"
+                  "example":
+                    - "1"
+                    - "2"
+                "unitCount":
+                  "type": "number"
+                  "example": 3
+            "example":
+              "corequisites":
+                - "3"
+                - "4"
+              "name": "Math new"
+              "prerequisites":
+                - "1"
+                - "2"
+              "unitCount": 3
+      "responses":
+        "200":
+          "description": ""
+    "delete":
+      "tags":
+        - "Admin"
+        - "Course"
+      "summary": "Delete course"
+      "description": "Delete course"
+      "operationId": "deleteCourse"
+      "parameters":
+        -
+          "in": "header"
+          "name": "Authorization"
+          "schema":
+            "type": "string"
+          "required": true
+      "responses":
+        "200":
+          "description": ""
+    "parameters":
+      -
+        "name": "id"
+        "in": "path"
+        "required": true
+        "schema":
+          "type": "string"
+  "/admin/courses":
+    "get":
+      "tags":
+        - "Admin"
+        - "Course"
+      "summary": "Fetch courses"
+      "description": "Fetch courses"
+      "operationId": "fetchCourses"
+      "parameters":
+        -
+          "in": "header"
+          "name": "Authorization"
+          "schema":
+            "type": "string"
+          "required": true
+      "responses":
+        "200":
+          "description": ""
+  "/course":
+    "post":
+      "tags":
+        - "Educational Manager"
+      "summary": "Add new course"
+      "description": "Add new course"
+      "operationId": "addNewCourse1"
+      "parameters":
+        -
+          "in": "header"
+          "name": "Authorization"
+          "schema":
+            "type": "string"
+          "required": true
+      "requestBody":
+        "content":
+          "application/json":
+            "schema":
+              "type": "object"
+              "properties":
+                "corequisites":
+                  "type": "array"
+                  "items":
+                    "type": "string"
+                    "example": "3"
+                  "example":
+                    - "3"
+                    - "4"
+                "name":
+                  "type": "string"
+                  "example": "Math"
+                "prerequisites":
+                  "type": "array"
+                  "items":
+                    "type": "string"
+                    "example": "1"
+                  "example":
+                    - "1"
+                    - "2"
+                "unitCount":
+                  "type": "number"
+                  "example": 3
+            "example":
+              "corequisites":
+                - "3"
+                - "4"
+              "name": "Math"
+              "prerequisites":
+                - "1"
+                - "2"
+              "unitCount": 3
+      "responses":
+        "200":
+          "description": ""
+  "/course/{id}":
+    "get":
+      "tags":
+        - "Professor1"
+      "summary": "Fetch course by id"
+      "description": "Fetch course by id"
+      "operationId": "fetchCourseById3"
+      "parameters":
+        -
+          "in": "header"
+          "name": "Authorization"
+          "schema":
+            "type": "string"
+          "required": true
+      "responses":
+        "200":
+          "description": ""
+    "put":
+      "tags":
+        - "Educational Manager"
+      "summary": "update course"
+      "description": "update course"
+      "operationId": "updateCourse1"
+      "parameters":
+        -
+          "in": "header"
+          "name": "Authorization"
+          "schema":
+            "type": "string"
+          "required": true
+      "requestBody":
+        "content":
+          "application/json":
+            "schema":
+              "type": "object"
+              "properties":
+                "corequisites":
+                  "type": "array"
+                  "items":
+                    "type": "string"
+                    "example": "3"
+                  "example":
+                    - "3"
+                    - "4"
+                "name":
+                  "type": "string"
+                  "example": "Math new"
+                "prerequisites":
+                  "type": "array"
+                  "items":
+                    "type": "string"
+                    "example": "1"
+                  "example":
+                    - "1"
+                    - "2"
+                "unitCount":
+                  "type": "number"
+                  "example": 3
+            "example":
+              "corequisites":
+                - "3"
+                - "4"
+              "name": "Math new"
+              "prerequisites":
+                - "1"
+                - "2"
+              "unitCount": 3
+      "responses":
+        "200":
+          "description": ""
+    "delete":
+      "tags":
+        - "Educational Manager"
+      "summary": "Delete course"
+      "description": "Delete course"
+      "operationId": "deleteCourse1"
+      "parameters":
+        -
+          "in": "header"
+          "name": "Authorization"
+          "schema":
+            "type": "string"
+          "required": true
+      "responses":
+        "200":
+          "description": ""
+    "parameters":
+      -
+        "name": "id"
+        "in": "path"
+        "required": true
+        "schema":
+          "type": "string"
+  "/courses":
+    "get":
+      "tags":
+        - "Professor1"
+      "summary": "Fetch courses"
+      "description": "Fetch courses"
+      "operationId": "fetchCourses3"
+      "parameters":
+        -
+          "in": "header"
+          "name": "Authorization"
+          "schema":
+            "type": "string"
+          "required": true
+      "responses":
+        "200":
+          "description": ""
+  "/professor/{id}":
+    "get":
+      "tags":
+        - "Educational Manager"
+      "summary": "Get professor by id"
+      "description": "Get professor by id"
+      "operationId": "getProfessorById1"
+      "parameters":
+        -
+          "in": "header"
+          "name": "Authorization"
+          "schema":
+            "type": "string"
+          "required": true
+      "responses":
+        "200":
+          "description": ""
+    "put":
+      "tags":
+        - "Professor1"
+      "summary": "Update professor"
+      "description": "Update professor"
+      "operationId": "updateProfessor1"
+      "parameters":
+        -
+          "in": "header"
+          "name": "Authorization"
+          "schema":
+            "type": "string"
+          "required": true
+      "requestBody":
+        "content":
+          "application/json":
+            "schema":
+              "type": "object"
+              "properties":
+                "email":
+                  "type": "string"
+                  "example": "ahmadreza0zarei@mail.com"
+                "faculty":
+                  "type": "string"
+                  "example": "computer sci"
+                "fieldOfStudy":
+                  "type": "string"
+                  "example": "sci"
+                "firstName":
+                  "type": "string"
+                  "example": "first new ewnew new new ew"
+                "idNumber":
+                  "type": "string"
+                  "example": ""
+                "lastName":
+                  "type": "string"
+                  "example": "last name"
+                "password":
+                  "type": "string"
+                  "example": "password"
+                "phone":
+                  "type": "string"
+                  "example": "0919453923"
+                "rank":
+                  "type": "string"
+                  "example": "rank-1"
+            "example":
+              "email": "ahmadreza0zarei@mail.com"
+              "faculty": "computer sci"
+              "fieldOfStudy": "sci"
+              "firstName": "first new ewnew new new ew"
+              "idNumber": ""
+              "lastName": "last name"
+              "password": "password"
+              "phone": "0919453923"
+              "rank": "rank-1"
+      "responses":
+        "200":
+          "description": ""
+    "parameters":
+      -
+        "name": "id"
+        "in": "path"
+        "required": true
+        "schema":
+          "type": "string"
+  "/professors":
+    "get":
+      "tags":
+        - "Educational Manager"
+      "summary": "Fetch all professors"
+      "description": "Fetch all professors"
+      "operationId": "fetchAllProfessors1"
+      "parameters":
+        -
+          "in": "header"
+          "name": "Authorization"
+          "schema":
+            "type": "string"
+          "required": true
+      "responses":
+        "200":
+          "description": ""
+  "/students":
+    "get":
+      "tags":
+        - "Educational Manager"
+      "summary": "Fetch students"
+      "description": "Fetch students"
+      "operationId": "fetchStudents1"
+      "parameters":
+        -
+          "in": "header"
+          "name": "Authorization"
+          "schema":
+            "type": "string"
+          "required": true
+      "responses":
+        "200":
+          "description": ""
+  "/student/{id}":
+    "get":
+      "tags":
+        - "Educational Manager"
+      "summary": "Fetch student by id"
+      "description": "Fetch student by id"
+      "operationId": "fetchStudentById1"
+      "parameters":
+        -
+          "in": "header"
+          "name": "Authorization"
+          "schema":
+            "type": "string"
+          "required": true
+      "responses":
+        "200":
+          "description": ""
+    "put":
+      "tags":
+        - "Student1"
+      "summary": "Update student"
+      "description": "Update student"
+      "operationId": "updateStudent1"
+      "parameters":
+        -
+          "in": "header"
+          "name": "Authorization"
+          "schema":
+            "type": "string"
+          "required": true
+      "requestBody":
+        "content":
+          "application/json":
+            "schema":
+              "type": "object"
+              "properties":
+                "email":
+                  "type": "string"
+                  "example": "email"
+                "entranceYear":
+                  "type": "string"
+                  "example": "2019"
+                "faculty":
+                  "type": "string"
+                  "example": "CS"
+                "fieldOfStudy":
+                  "type": "string"
+                  "example": "C"
+                "firstName":
+                  "type": "string"
+                  "example": "student name new"
+                "grade":
+                  "type": "string"
+                  "example": "karshenasi"
+                "lastName":
+                  "type": "string"
+                  "example": "student last name"
+                "mean":
+                  "type": "number"
+                  "example": 19.4
+                "password":
+                  "type": "string"
+                  "example": "password"
+                "phone":
+                  "type": "string"
+                  "example": "2312421312"
+            "example":
+              "email": "email"
+              "entranceYear": "2019"
+              "faculty": "CS"
+              "fieldOfStudy": "C"
+              "firstName": "student name new"
+              "grade": "karshenasi"
+              "lastName": "student last name"
+              "mean": 19.4
+              "password": "password"
+              "phone": "2312421312"
+      "responses":
+        "200":
+          "description": ""
+    "parameters":
+      -
+        "name": "id"
+        "in": "path"
+        "required": true
+        "schema":
+          "type": "string"
+  "/login":
+    "post":
+      "summary": "login"
+      "description": "login"
+      "operationId": "login"
+      "requestBody":
+        "content":
+          "application/json":
+            "schema":
+              "type": "object"
+              "properties":
+                "email":
+                  "type": "string"
+                  "example": "email@gmail.com"
+                "password":
+                  "type": "string"
+                  "example": "password"
+                "role":
+                  "type": "string"
+                  "example": "admin"
+            "example":
+              "email": "email@gmail.com"
+              "password": "password"
+              "role": "admin"
+      "responses":
+        "200":
+          "description": ""
+"tags":
+  -
+    "name": "Admin"
+  -
+    "name": "Professor"
+  -
+    "name": "Student"
+  -
+    "name": "Manager"
+  -
+    "name": "Course"
+  -
+    "name": "Educational Manager"
+  -
+    "name": "Student1"
+  -
+    "name": "Professor1"

@@ -33,11 +33,10 @@ const registrationCourseController = function (
     const addRegistrationCourse = (req, res, next) => {
 
         const idNumber = Date.now()
-
+        const isPreReg = req.query.isPreReg
+        const termId = req.params.id
         const {
-            termId,
             termCourseId,
-            isPreReg,
         } = req.body
 
         add({
@@ -58,11 +57,11 @@ const registrationCourseController = function (
     const deleteRegistrationCourse = (req, res, next) => {
 
         const termId = req.params.id
-        const idNumber = req.query.reg_course_id
+        const idNumber = req.query.regId
 
         deleteById({idNumber: idNumber, registrationCourseRepository})
             .then(course => {
-                res.json({termCourse: course})
+                res.json({registrationCourse: course})
             }).catch(err => {
             res.status(500).json(internalServerError)
         })

@@ -15,21 +15,22 @@ const registrationCourseRouter = function (express) {
     let md = function (isPreReg) {
         return function (req, res, next) {
             req.query.isPreReg = isPreReg
+            next()
         }
     }
 
 
     router.post("/term/:id/preregistration", md(true), controller.addRegistrationCourse)
 
-    router.get("/term/id/preregistration_courses", md(true), controller.fetchRegistrationCourses)
+    router.get("/term/:id/preregistration_courses", md(true), controller.fetchRegistrationCourses)
 
-    router.delete("/term/{ID}/preregistration", md(true), controller.deleteRegistrationCourse)
+    router.delete("/term/:id/preregistration", md(true), controller.deleteRegistrationCourse)
 
     router.post("/term/:id/registration", md(false), controller.addRegistrationCourse)
 
-    router.get("/term/id/registration_courses", md(false), controller.fetchRegistrationCourses)
+    router.get("/term/:id/registration_courses", md(false), controller.fetchRegistrationCourses)
 
-    router.delete("/term/{ID}/registration", md(false), controller.deleteRegistrationCourse)
+    router.delete("/term/:id/registration", md(false), controller.deleteRegistrationCourse)
 
     return router;
 

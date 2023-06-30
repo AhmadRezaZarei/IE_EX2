@@ -21,7 +21,7 @@ const authController = function (
 
 
         loginUser({email, password, role, authService, authRepository}).then(token => {
-
+            console.log("called with token of ", token)
             if (token == null) {
                 res.status(401).json({error: "Invalid email or password", errorCode: 401})
             } else {

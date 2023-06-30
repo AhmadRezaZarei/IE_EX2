@@ -10,4 +10,4 @@ const termEntity = function ({
     };
 }
 
-export default termCourse
+export default termEntity

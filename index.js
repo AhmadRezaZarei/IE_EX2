@@ -10,12 +10,7 @@ const connectionString = process.env.connection_string || "mongodb://127.0.0.1:2
 
 connectionToMongoDB().then(props => {
     console.log("connected to mongodb")
-
-
-    //
-    ManagerModel.findOne({email: "email", password: "password"}).then(res => {
-        console.log(res)
-    })
+    
 
 }).catch(err => console.log(err));
 

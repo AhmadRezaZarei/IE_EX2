@@ -11,8 +11,8 @@ const termRepositoryMongoDB = function () {
 
         const newTerm = new TermModel({
             idNumber: termEntity.getIdNumber(),
-            name: termEntity.getCourseId(),
-            isEnded: termEntity.getCourseDataAndTime(),
+            name: termEntity.getName(),
+            isEnded: termEntity.isEnded(),
         })
 
         return newTerm.save()
@@ -22,11 +22,11 @@ const termRepositoryMongoDB = function () {
     const updateById = (id, termEntity) => {
 
         const updatedTerm = {
-            name: termEntity.getCourseId(),
-            isEnded: termEntity.getCourseDataAndTime(),
+            name: termEntity.getName(),
+            isEnded: termEntity.isEnded(),
         }
 
-        return TermCourseModel.findOneAndUpdate({idNumber: id}, {$set: updatedTerm}, {new: true})
+        return TermModel.findOneAndUpdate({idNumber: id}, {$set: updatedTerm}, {new: true})
 
     }
 

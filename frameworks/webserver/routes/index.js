@@ -5,6 +5,7 @@ import courseRouter from "./course.js";
 import termRouter from "./term.js";
 import authMiddleware from "../middlewares/authMiddleware.js";
 import authRouter from "./auth.js";
+import registrationCourseRouter from "./registration_course.js"
 import specificRoleRouter from "./manager_specific.js";
 
 const routes = function routes(app, express) {
@@ -16,7 +17,7 @@ const routes = function routes(app, express) {
     app.use("/admin/", studentRouter(express))
     app.use("/admin/", managerRouter(express))
     app.use("/admin/", courseRouter(express))
-
+    app.use("/", registrationCourseRouter(express))
     app.use("/", termRouter(express))
     app.use("/", authRouter(express))
 

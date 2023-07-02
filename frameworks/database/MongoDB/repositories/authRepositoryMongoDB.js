@@ -8,25 +8,50 @@ const authRepositoryMongoDB = function () {
     const findUser = (email, password, role) => {
 
 
-        let model = StudentModel
 
-        switch (role) {
-            case "student":
-                model = StudentModel;
-                break;
-            case 'professor':
-                console.log("mode is manager")
-                model = ProfessorModel;
-                break
-            case 'manager':
-                model = ManagerModel
-                break
-            case 'admin':
-                model = AdminModel
-                break;
-        }
+        return new Promise(( async (resolve, reject) => {
 
-        return model.findOne({email: email, password: password})
+            let query = {email: email, password: password}
+
+            let prepare = (user, role) => {
+                return {
+                    firstName: user.firstName,
+                    role: role,
+                    idNumber: user.idNumber
+                }
+            }
+
+            try {
+                const result = await ProfessorModel.findOne(query)
+                resolve(prepare(result, "professor"))
+            } catch (e) {
+
+            }
+
+            try {
+                const result = await StudentModel.findOne(query)
+                resolve(prepare(result, "student"))
+            } catch (e) {
+
+            }
+
+            try {
+                const result = await ManagerModel.findOne(query)
+                resolve(prepare(result, "manager"))
+            } catch (e) {
+
+            }
+
+            try {
+                const result = await AdminModel.findOne(query)
+                resolve(prepare(result, "admin"))
+            } catch (e) {
+
+            }
+
+            reject()
+
+        }))
 
     }
 

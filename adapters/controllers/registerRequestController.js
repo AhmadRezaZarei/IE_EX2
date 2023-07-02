@@ -13,13 +13,13 @@ const registerRequestController = function (
 
     const fetchRegisterRequest = (req, res, next) => {
 
-        const termId = req.params.id
+        const termIdNumber = req.params.id
         const isPreReg = req.query.isPreReg
         const studentIdNumber = req.query.studentIdNumber
 
         findAll({
             isPreReg,
-            termId,
+            termIdNumber,
             studentIdNumber,
             registerRequestRepository
         }).then(registrationCourses => {
@@ -53,7 +53,7 @@ const registerRequestController = function (
                 registerRequestRepository
             }
         ).then(term => {
-            res.json({registrationCourse: term})
+            res.json({registerRequest: term})
         }).catch(err => {
             res.status(500).json(internalServerError)
         })
@@ -67,7 +67,7 @@ const registerRequestController = function (
 
         unregister({idNumber: reqRequestIdNumber, registerRequestRepository})
             .then(course => {
-                res.json({registrationCourse: course})
+                res.json({registerRequest: course})
             }).catch(err => {
             res.status(500).json(internalServerError)
         })

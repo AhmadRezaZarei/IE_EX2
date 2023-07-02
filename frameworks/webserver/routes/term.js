@@ -11,15 +11,15 @@ const termRouter = function (express) {
 
     const controller = termController(termDbRepository, termRepositoryMongoDB)
 
-    router.post("/term", managerMiddleware, controller.addNewTerm)
+    router.post("/term", controller.addNewTerm)
 
     router.get("/term/:id", controller.fetchTermById)
 
-    router.get("/terms", managerMiddleware, controller.fetchAllTerms)
+    router.get("/terms", controller.fetchAllTerms)
 
-    router.delete("/term/:id", managerMiddleware, controller.deleteTerm)
+    router.delete("/term/:id", controller.deleteTerm)
 
-    router.put("/term/:id", managerMiddleware, controller.updateTerm)
+    router.put("/term/:id", controller.updateTerm)
 
     return router;
 

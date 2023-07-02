@@ -6,16 +6,16 @@ const RegisterRequestSchema = new Schema({
     idNumber: {
         type: String,
     },
-    studentIdNumber: {
+    studentId: {
         type: String,
     },
-    regCourseIdNumber: {
+    regCourseId: {
         type: String
     },
     isPreReg: {
         type: String
     },
-    termIdNumber: {
+    termId: {
         type: String
     }
 });

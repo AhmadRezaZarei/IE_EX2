@@ -20,12 +20,12 @@ const authController = function (
         } = req.body
 
 
-        loginUser({email, password, role, authService, authRepository}).then(token => {
-            console.log("called with token of ", token)
-            if (token == null) {
+        loginUser({email, password, role, authService, authRepository}).then(result => {
+            if (result == null) {
                 res.status(401).json({error: "Invalid email or password", errorCode: 401})
             } else {
-                res.json({error: null, errorCode: 0, token: token})
+                console.log("result", result)
+                res.json({error: null, errorCode: 0, user: result.user, accessToken: result.accessToken})
             }
 
         }).catch(err => {

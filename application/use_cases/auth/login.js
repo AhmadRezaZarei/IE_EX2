@@ -7,9 +7,15 @@ const loginUser = function ({
                             }) {
 
     return authRepository.findUser(email, password, role).then(user => {
-        console.log("fetched user" , user)
         if (user) {
-            return authService.generateToken({role: role, idNumber: user.idNumber})
+
+            return {
+                user: {
+                    firstName: user.firstName,
+                    role: user.role,
+                    idNumber: user.idNumber,
+                }, accessToken: authService.generateToken({role: role, idNumber: user.idNumber})
+            }
         }
 
         return null

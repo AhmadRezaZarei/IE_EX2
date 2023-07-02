@@ -7,7 +7,7 @@ import authMiddleware from "../middlewares/authMiddleware.js";
 import authRouter from "./auth.js";
 import registrationCourseRouter from "./registration_course.js"
 import specificRoleRouter from "./manager_specific.js";
-import registerRequestRouter from "./register_request";
+import registerRequestRouter from "./register_request.js";
 
 const routes = function routes(app, express) {
 

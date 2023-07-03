@@ -8,7 +8,7 @@ const addTermCourse = function ({
                                     location,
                                     professorId,
                                     capacity,
-                                    term,
+                                    termId,
                                     termCourseRepository
                                 }) {
 
@@ -22,7 +22,7 @@ const addTermCourse = function ({
         location,
         professorId,
         capacity,
-        term
+        termId
     });
 
     return termCourseRepository.add(newCourse);

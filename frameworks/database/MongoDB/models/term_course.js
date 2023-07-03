@@ -24,7 +24,7 @@ const termCourseSchema = new Schema({
     capacity: {
         type: String
     },
-    term: {
+    termId: {
         type: String
     },
 });

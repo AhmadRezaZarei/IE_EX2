@@ -34,6 +34,8 @@ const registerRequestController = function (
 
 
         let studentIdNumber = req.idNumber
+
+
         const idNumber = Date.now() // register request id number
         const regCourseIdNumber = req.params.id
 
@@ -43,6 +45,11 @@ const registerRequestController = function (
             termIdNumber
         } = req.body
 
+
+        console.log("isPreReg", isPreReg)
+        console.log("sutdnetIdNumber", studentIdNumber)
+        console.log("regCourseIdNumber", regCourseIdNumber)
+        console.log("termIdNumber", termIdNumber)
 
         register({
                 idNumber,

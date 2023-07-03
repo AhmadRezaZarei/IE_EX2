@@ -1,12 +1,17 @@
 import registrationCourseEntity from "../../../entities/registration_course.js";
 
 const add = function ({
-                                   idNumber,
-                                   termId,
-                                   termCourseId,
-                                   isPreReg,
-                                   registrationCourseRepository
-                               }) {
+                          idNumber,
+                          name,
+                          termId,
+                          termCourseId,
+                          professorName,
+                          capacity,
+                          classDateTime,
+                          examDateTime,
+                          isPreReg,
+                          registrationCourseRepository
+                      }) {
 
     // TODO: add a proper validation (consider using @hapi/joi)
 
@@ -15,6 +20,10 @@ const add = function ({
             termId,
             termCourseId,
             isPreReg,
+            name, professorName,
+            capacity,
+            classDateTime,
+            examDateTime,
         }
     );
 

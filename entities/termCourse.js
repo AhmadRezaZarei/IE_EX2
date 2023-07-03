@@ -6,7 +6,7 @@ const termCourse = function ({
                                  location,
                                  professorId,
                                  capacity,
-                                 termIdNumber,
+                                 termId,
                              }) {
     return {
         getIdNumber: () => idNumber,
@@ -15,7 +15,7 @@ const termCourse = function ({
         getLocation: () => location,
         getProfessorId: () => professorId,
         getCapacity: () => capacity,
-        getTermIdNumber: () => termIdNumber,
+        getTermIdNumber: () => termId,
         getCourseId: () => courseId
     };
 }

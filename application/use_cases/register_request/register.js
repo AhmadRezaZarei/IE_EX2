@@ -9,6 +9,7 @@ const register = function ({
                                registerRequestRepository
                            }) {
 
+
     // TODO: add a proper validation (consider using @hapi/joi)
 
     const newReq = registerRequestEntity({

@@ -32,6 +32,7 @@ const registrationCourseRouter = function (express) {
 
     router.delete("/term/:id/registration", md(false), controller.deleteRegistrationCourse)
 
+
     return router;
 
 }

@@ -1,14 +1,14 @@
 const registerRequestEntity = function ({
                                             idNumber,
                                             studentIdNumber,
-                                            isPreReq,
+                                            isPreReg,
                                             regCourseIdNumber,
                                             termIdNumber
                                         }) {
     return {
         getIdNumber: () => idNumber,
         getStudentIdNumber: () => studentIdNumber,
-        isPreReq: () => isPreReq,
+        isPreReq: () => isPreReg,
         getReqCourseIdNumber: () => regCourseIdNumber,
         getTermIdNumber: () => termIdNumber
     };

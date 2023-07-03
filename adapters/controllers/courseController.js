@@ -68,7 +68,7 @@ const courseController = function (
                 location,
                 professorId,
                 capacity,
-                term
+                termId
             } = req.body
 
             addTermCourse({
@@ -79,7 +79,7 @@ const courseController = function (
                 location,
                 professorId,
                 capacity,
-                term,
+                termId,
                 termCourseRepository
             }).then(course => {
                 res.json({termCourse: course})
@@ -181,7 +181,7 @@ const courseController = function (
                 location,
                 professorId,
                 capacity,
-                term
+                termId
             } = req.body
 
             updateTermCourse({
@@ -192,7 +192,7 @@ const courseController = function (
                 location,
                 professorId,
                 capacity,
-                term,
+                termId,
                 termCourseRepository
             }).then(termCourse => {
 

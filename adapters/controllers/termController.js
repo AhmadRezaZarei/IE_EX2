@@ -57,7 +57,6 @@ const termController = function (
             res.status(500).json(internalServerError)
         })
 
-
     }
 
     const fetchTermById = (req, res, next) => {

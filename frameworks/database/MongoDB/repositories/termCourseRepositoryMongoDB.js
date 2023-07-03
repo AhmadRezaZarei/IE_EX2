@@ -17,7 +17,7 @@ const termCourseRepositoryMongoDB = function () {
             location: termCourseEntity.getLocation(),
             professorId: termCourseEntity.getProfessorId(),
             capacity: termCourseEntity.getCapacity(),
-            term: termCourseEntity.getTerm(),
+            termId: termCourseEntity.getTermIdNumber(),
         })
 
         return newTermCourse.save()

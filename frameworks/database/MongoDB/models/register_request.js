@@ -13,7 +13,7 @@ const RegisterRequestSchema = new Schema({
         type: String
     },
     isPreReg: {
-        type: String
+        type: Boolean
     },
     termId: {
         type: String

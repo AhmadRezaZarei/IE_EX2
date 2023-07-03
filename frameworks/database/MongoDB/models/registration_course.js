@@ -14,8 +14,22 @@ const RegistrationCourseSchema = new Schema({
     },
     isPreReg: {
         type: Boolean
+    },
+    name: {
+        type: String,
+    },
+    professorName: {
+        type: String,
+    },
+    capacity: {
+        type: String,
+    },
+    classDateTime: {
+        type: String,
+    },
+    examDateTime: {
+        type: String,
     }
-
 });
 
 const RegistrationCourseModel = mongoose.model('RegistrationCourse', RegistrationCourseSchema);

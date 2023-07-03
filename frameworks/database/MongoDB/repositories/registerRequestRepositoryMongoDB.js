@@ -12,10 +12,17 @@ const registerRequestRepositoryMongoDB = function () {
 
     const register = (regRequestEntity) => {
 
+
+        console.log("idNumber", regRequestEntity.getIdNumber())
+        console.log("studnetIdNumber", regRequestEntity.getStudentIdNumber())
+        console.log("reqCourseIdNumber", regRequestEntity.getReqCourseIdNumber())
+        console.log("isPreReq", regRequestEntity.isPreReq())
+        console.log("termIdNumber", regRequestEntity.getTermIdNumber())
+
         const newReq = new RegisterRequestModel({
             idNumber: regRequestEntity.getIdNumber(),
-            studentIdNumber: regRequestEntity.getStudentIdNumber(),
-            reqCourseIdNumber: regRequestEntity.getReqCourseIdNumber(),
+            studentId: regRequestEntity.getStudentIdNumber(),
+            regCourseId: regRequestEntity.getReqCourseIdNumber(),
             isPreReg: regRequestEntity.isPreReq(),
             termIdNumber: regRequestEntity.getTermIdNumber()
         })

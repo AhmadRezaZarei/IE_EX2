@@ -23,7 +23,18 @@ const registrationCourseController = function (
             isPreReg,
             registrationCourseRepository
         }).then(registrationCourses => {
-            res.json({registrationCourses: registrationCourses})
+            // res.json({
+            //     semester: {
+            //         name: "semester1"
+            //     },
+            //     registrationCourses: [{
+            //         name: "name1",
+            //         id: 1,
+            //         studentLength: 10
+            //     }]
+            // })
+
+              res.json({registrationCourses: registrationCourses})
         }).catch(err => {
             res.status(500).json(internalServerError)
         })
@@ -34,15 +45,27 @@ const registrationCourseController = function (
 
         const idNumber = Date.now()
         const isPreReg = req.query.isPreReg
+
         const termId = req.params.id
         const {
-            termCourseId,
+            name,
+            professorName,
+            capacity,
+            classDateTime,
+            examDateTime
         } = req.body
+
+        const termCourseId = "dummy"
 
         add({
                 idNumber,
                 termId,
                 termCourseId,
+                professorName,
+                capacity,
+                classDateTime,
+                examDateTime,
+                name,
                 isPreReg,
                 registrationCourseRepository
             }
@@ -58,6 +81,7 @@ const registrationCourseController = function (
 
         const termId = req.params.id
         const idNumber = req.query.regId
+
 
         deleteById({idNumber: idNumber, registrationCourseRepository})
             .then(course => {
